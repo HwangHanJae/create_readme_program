@@ -58,7 +58,7 @@ try :
   soup = BeautifulSoup(webpage.content, 'html.parser')
 
   #file 만들기
-  file_name = 'readme.md'
+  file_name = 'problem readme.md'
   f = open(file_name, 'w', encoding="UTF-8")
 
   #타이틀 찾기
