@@ -51,6 +51,7 @@ def find_problem_output():
 try :
   #백준 사이트의 정보를 받을때 403 에러가 나오는데
   #이를 해결하기 위하여 headers를 추가하여 해결
+  print('백준 링크를 입력하세요 : ')
   link = sys.stdin.readline().rstrip()
   headers = {'User-Agent':'Chrome/66.0.3359.181'}
   webpage = requests.get(link, headers=headers)
@@ -94,8 +95,12 @@ try :
   f.write(source_title)
 
   #출처 내용 설정
-  defalut = "[백준 {}]({})".format(number_title.replace('번',''), link)
+  defalut = "문제링크 : [백준 {}]({})".format(number_title.replace('번',''), link)
   f.write(defalut)
+
+  f.write('\n\n')
+  blog_link ='풀이법 : https://my-develop-note.tistory.com/'
+  f.write(blog_link)
   f.close()
   print("readme 완성")
 except:
